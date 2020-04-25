@@ -25,7 +25,7 @@ SECRET_KEY = '3$$3%0-zaudfy0!+5!8#(nyd7y_h0n*n8*a1*=gj@k0_elcy%g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.56.101', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',                              # blog app 추가
 ]
 
 MIDDLEWARE = [
@@ -103,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'         # 언어 : 한국
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'        # 타임존 : 한국 시간(기본 : UTC(세계표준시))
 
 USE_I18N = True
 
