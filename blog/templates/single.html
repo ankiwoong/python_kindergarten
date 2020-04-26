@@ -19,6 +19,7 @@
     <!-- Site Title -->
     <title>Blogger</title>
 
+    {% load static %}
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
       rel="stylesheet"
@@ -133,7 +134,7 @@
                         <h3>12 Dec ,2017 11:21 am</h3>
                       </div>
                       <div class="user-img">
-                        <img src="img/user.jpg" alt="" />
+                        <img src="{% static 'img/user.jpg' %}" alt="" />
                       </div>
                     </div>
                   </div>

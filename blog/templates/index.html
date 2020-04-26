@@ -18,7 +18,7 @@
     <meta charset="UTF-8" />
     <!-- Site Title -->
     <title>Blogger</title>
-
+    {% load static %}
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
       rel="stylesheet"
@@ -38,7 +38,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="img/logo.png" alt="" />
+            <img src="{% static 'img/logo.png' %}" alt="" />
           </a>
           <button
             class="navbar-toggler"
@@ -93,7 +93,7 @@
       class="banner-area relative"
       id="home"
       data-parallax="scroll"
-      data-image-src="img/header-bg.jpg"
+      data-image-src="{% static 'img/header-bg.jpg' %}"
     >
       <div class="overlay-bg overlay"></div>
       <div class="container">
@@ -120,7 +120,11 @@
                 <h4 class="text-white">Mark wiens</h4>
                 <p>12 Dec, 2017 11:21 am</p>
               </div>
-              <img class="img-fluid user-img" src="img/user.jpg" alt="" />
+              <img
+                class="img-fluid user-img"
+                src="{% static 'img/user.jpg' %}"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -144,17 +148,17 @@
         </div>
         <div class="active-cat-carusel">
           <div class="item single-cat">
-            <img src="img/c1.jpg" alt="" />
+            <img src="{% static 'img/c1.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">It S Hurricane Season Visiting Hilton</a></h4>
           </div>
           <div class="item single-cat">
-            <img src="img/c2.jpg" alt="" />
+            <img src="{% static 'img/c2.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">What Makes A Hotel Boutique</a></h4>
           </div>
           <div class="item single-cat">
-            <img src="img/c3.jpg" alt="" />
+            <img src="{% static 'img/c3.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">Les Houches The Hidden Gem Valley</a></h4>
           </div>
@@ -180,7 +184,11 @@
         <div class="row">
           <div class="col-lg-6 travel-left">
             <div class="single-travel media pb-70">
-              <img class="img-fluid d-flex mr-3" src="img/t1.jpg" alt="" />
+              <img
+                class="img-fluid d-flex mr-3"
+                src="{% static 'img/t1.jpg' %}"
+                alt=""
+              />
               <div class="dates">
                 <span>20</span>
                 <p>Dec</p>
@@ -200,7 +208,11 @@
               </div>
             </div>
             <div class="single-travel media">
-              <img class="img-fluid d-flex mr-3" src="img/t3.jpg" alt="" />
+              <img
+                class="img-fluid d-flex mr-3"
+                src="{% static 'img/t3.jpg' %}"
+                alt=""
+              />
               <div class="dates">
                 <span>20</span>
                 <p>Dec</p>
@@ -222,7 +234,11 @@
           </div>
           <div class="col-lg-6 travel-right">
             <div class="single-travel media pb-70">
-              <img class="img-fluid d-flex mr-3" src="img/t2.jpg" alt="" />
+              <img
+                class="img-fluid d-flex mr-3"
+                src="{% static 'img/t2.jpg' %}"
+                alt=""
+              />
               <div class="dates">
                 <span>20</span>
                 <p>Dec</p>
@@ -242,7 +258,11 @@
               </div>
             </div>
             <div class="single-travel media">
-              <img class="img-fluid d-flex mr-3" src="img/t4.jpg" alt="" />
+              <img
+                class="img-fluid d-flex mr-3"
+                src="{% static 'img/t4.jpg' %}"
+                alt=""
+              />
               <div class="dates">
                 <span>20</span>
                 <p>Dec</p>
@@ -288,7 +308,7 @@
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="img/f1.jpg" alt="" />
+            <img class="img-fluid" src="{% static 'img/f1.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">Addiction When Gambling Becomes A Problem</a></h4>
             <p>
@@ -300,7 +320,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="img/f2.jpg" alt="" />
+            <img class="img-fluid" src="{% static 'img/f2.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">Addiction When Gambling Becomes A Problem</a></h4>
             <p>
@@ -312,7 +332,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="img/f3.jpg" alt="" />
+            <img class="img-fluid" src="{% static 'img/f3.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">Addiction When Gambling Becomes A Problem</a></h4>
             <p>
@@ -324,7 +344,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 single-fashion">
-            <img class="img-fluid" src="img/f4.jpg" alt="" />
+            <img class="img-fluid" src="{% static 'img/f4.jpg' %}" alt="" />
             <p class="date">10 Jan 2018</p>
             <h4><a href="#">Addiction When Gambling Becomes A Problem</a></h4>
             <p>
@@ -377,7 +397,11 @@
             <div class="row active-team-carusel">
               <div class="single-team">
                 <div class="thumb">
-                  <img class="img-fluid" src="img/team1.jpg" alt="" />
+                  <img
+                    class="img-fluid"
+                    src="{% static 'img/team1.jpg' %}"
+                    alt=""
+                  />
                   <div class="align-items-center justify-content-center d-flex">
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -391,7 +415,11 @@
               </div>
               <div class="single-team">
                 <div class="thumb">
-                  <img class="img-fluid" src="img/team2.jpg" alt="" />
+                  <img
+                    class="img-fluid"
+                    src="{% static 'img/team2.jpg' %}"
+                    alt=""
+                  />
                   <div class="align-items-center justify-content-center d-flex">
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
@@ -474,14 +502,14 @@
             <div class="single-footer-widget mail-chimp">
               <h6 class="mb-20">Instragram Feed</h6>
               <ul class="instafeed d-flex flex-wrap">
-                <li><img src="img/i1.jpg" alt="" /></li>
-                <li><img src="img/i2.jpg" alt="" /></li>
-                <li><img src="img/i3.jpg" alt="" /></li>
-                <li><img src="img/i4.jpg" alt="" /></li>
-                <li><img src="img/i5.jpg" alt="" /></li>
-                <li><img src="img/i6.jpg" alt="" /></li>
-                <li><img src="img/i7.jpg" alt="" /></li>
-                <li><img src="img/i8.jpg" alt="" /></li>
+                <li><img src="{% static 'img/i1.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i2.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i3.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i4.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i5.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i6.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i7.jpg' %}" alt="" /></li>
+                <li><img src="{% static 'img/i8.jpg' %}" alt="" /></li>
               </ul>
             </div>
           </div>
