@@ -11,3 +11,11 @@ def index(req):
     }
 
     return render(req, 'index.html', context=context)
+
+
+def single(req):
+    context = {
+
+    }
+
+    return render(req, 'single.html', context=context)
