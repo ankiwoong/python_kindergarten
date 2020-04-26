@@ -7,5 +7,8 @@
   </head>
   <body>
     <h1>Hello My TEST BLOG</h1>
+    <!-- django에서 script load시 반드시 {% load static %} 을 해줘야된다. -->
+    {% load static %}
+    <script src="{% static 'js/test.js' %}"></script>
   </body>
 </html>
