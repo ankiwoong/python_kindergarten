@@ -24,3 +24,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('single', args=[str(self.id)])
+
+    # 300자가 넘을경우
+    def is_content_more300(self):
+        return len(self.content) > 300
+
+    # 300자가 안넘을경우
+    def get_content_under300(self):
+        return self.content[:300]
