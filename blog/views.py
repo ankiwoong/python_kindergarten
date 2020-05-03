@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView
 
 from blog.models import Category, Post
 
@@ -17,3 +19,8 @@ def index(req):
 
 class PostDetailView(generic.DetailView):
     model = Post
+
+
+class PostCreate(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'title_image', 'content', 'category']
