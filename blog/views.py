@@ -9,7 +9,7 @@ from blog.models import Category, Post
 
 
 def index(req):
-    post_latest = Post.objects.order_by("-createDate")[:6]      # 내림차순
+    post_latest = Post.objects.order_by("-createDate")[:]      # 내림차순
     context = {
         "post_latest": post_latest
     }
