@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 # http://localhost:8000/ => http://localhost:8000/blog
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
-    path('', RedirectView.as_view(url='/blog/', permanent=True)),
+    path("blog/", include("blog.urls")),
+    path("", RedirectView.as_view(url="/blog/", permanent=True)),
 ]
 
 urlpatterns += static(settings.STATIC_URL,

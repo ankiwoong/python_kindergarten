@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from blog.models import Category, Post
 
@@ -14,9 +15,5 @@ def index(req):
     return render(req, 'index.html', context=context)
 
 
-def single(req):
-    context = {
-
-    }
-
-    return render(req, 'single.html', context=context)
+class PostDetailView(generic.DetailView):
+    model = Post

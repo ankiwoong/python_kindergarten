@@ -22,8 +22,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    # 1번 글 -> post/1
     def get_absolute_url(self):
-        return reverse('single', args=[str(self.id)])
+        return reverse('post', args=[str(self.id)])
 
     # 300자가 넘을경우
     def is_content_more300(self):
