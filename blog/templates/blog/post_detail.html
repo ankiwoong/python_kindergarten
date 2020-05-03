@@ -126,7 +126,14 @@
                     <div class="clear"></div>
                 </div>
 
-                <div class="entry-content">
+                <!-- 사진 -->
+                {% if post.title_image %}
+                <div class="post-full-width">
+                    <img src="{{ post.title_image.url }}" alt="">
+                </div>
+                {% endif %}
+
+                <div class=" entry-content">
                     <div class="content-wrap content-660 center-relative">
                         <!-- 글 내용 -->
                         {{ post.content }}
