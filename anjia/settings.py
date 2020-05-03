@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3$$3%0-zaudfy0!+5!8#(nyd7y_h0n*n8*a1*=gj@k0_elcy%g'
+SECRET_KEY = 'cm^jyqm^qxfh8cxpe^=o$q-t5a_x=tw82=$v3$9y6qq@t*3svd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.56.101', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig',                              # blog app 추가
+]
+
+INSTALLED_APPS += [
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -104,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'         # 언어 : 한국
+LANGUAGE_CODE = 'ko'
 
-TIME_ZONE = 'Asia/Seoul'        # 타임존 : 한국 시간(기본 : UTC(세계표준시))
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -119,8 +122,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# STATIC File
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
