@@ -14,7 +14,7 @@
 <img src="https://z-images.s3.amazonaws.com/6/64/Write_a_new_post.png">
 
 * Detail Page
-<img src="https://zetawiki.com/wiki/%ED%8C%8C%EC%9D%BC:Check_the_content_photos.png">
+<img src="https://z-images.s3.amazonaws.com/9/99/Check_the_content_photos.png">
 
 * Main Page
 <img src="https://z-images.s3.amazonaws.com/2/29/Index_modification.png">
