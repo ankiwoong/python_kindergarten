@@ -28,6 +28,8 @@ urlpatterns = [
     path("blog/", include("blog.urls")),
     path("", RedirectView.as_view(url="/blog/", permanent=True)),
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(),
+         name='logout', kwargs={'next_page': '/'}),
 ]
 
 urlpatterns += static(settings.STATIC_URL,
