@@ -18,3 +18,9 @@
 
 * Main Page
 <img src="https://z-images.s3.amazonaws.com/2/29/Index_modification.png">
+
+* Login Page
+<img src="https://z-images.s3.amazonaws.com/a/ac/Loginpage.png"
+
+* Logout Page
+<img src="https://z-images.s3.amazonaws.com/6/62/Logout.png">
