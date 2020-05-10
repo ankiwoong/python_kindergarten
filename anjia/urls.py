@@ -19,6 +19,7 @@ from django.conf.urls import include
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 
 # http://localhost:8000/ => http://localhost:8000/blog
@@ -26,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("blog/", include("blog.urls")),
     path("", RedirectView.as_view(url="/blog/", permanent=True)),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
 ]
 
 urlpatterns += static(settings.STATIC_URL,
