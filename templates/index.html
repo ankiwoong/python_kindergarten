@@ -40,13 +40,8 @@ AnJiA PhotoBlog
                             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         </h2>
                         <div class="excerpt">
-                            <!-- 글 내용 300자 체크 -->
-                            {% if post.is_content_more300 %}
-                            <!-- 300자가 안넘을경우 -->
-                            {{ post.get_content_under300 }}
-                            {% else %}
-                            {{ post.content }}
-                            {% endif %}
+							<!-- 글 내용은 300자를 초과하면 ...으로 표시 -->
+                            {{ post.content|truncatechars:300 }}
                             <a class="read-more" href="{{ post.get_absolute_url }}"></a>
                         </div>
                         <div class="clear"></div>
