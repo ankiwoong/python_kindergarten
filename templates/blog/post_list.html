@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container my-3">
+    <table class="table">
+        <thead>
+        <tr class="thead-dark">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+		</thead>
+		<tbody>
+		{% if posts %}
+		{% for post in posts %}
+		<tr>
+		<td>{{ forloop.counter }}</td>
+		<td><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></td>
+		<td>{{ post.createDate }}</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+        <tr>
+            <td colspan="3">글이 없습니다.</td>
+        </tr>
+        {% endif %}
+		</tbody>
+    </table>
+</div>
+
+
+{% endblock %}

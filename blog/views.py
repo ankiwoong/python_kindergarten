@@ -24,3 +24,8 @@ class PostDetailView(generic.DetailView):
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'title_image', 'content', 'category']
+
+
+def post_list(req):
+    posts = Post.objects.order_by("-createDate")
+    return render(req, 'blog/post_list.html', {'posts': posts})
