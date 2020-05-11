@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
+from django.core.paginator import Paginator
 
 from blog.models import Category, Post
 
@@ -27,5 +28,13 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 
 def post_list(req):
+    page = req.GET.get('page', '1')
     posts = Post.objects.order_by("-createDate")
-    return render(req, 'blog/post_list.html', {'posts': posts})
+
+    paginator = Paginator(posts, 10)
+    page_obj = paginator.get_page(page)
+
+    context = {
+        'posts': posts
+    }
+    return render(req, 'blog/post_list.html', context=context)
