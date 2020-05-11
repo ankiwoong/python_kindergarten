@@ -28,13 +28,14 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 
 def post_list(req):
-    page = req.GET.get('page', '1')
+    page = int(req.GET.get('page', '1'))
     posts = Post.objects.order_by("-createDate")
 
     paginator = Paginator(posts, 10)
     page_obj = paginator.get_page(page)
 
     context = {
-        'posts': posts
+        'posts': page_obj
     }
+
     return render(req, 'blog/post_list.html', context=context)

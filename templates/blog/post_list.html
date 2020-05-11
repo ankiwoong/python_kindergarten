@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<div class="container my-3">
+<div class="container my-0">
     <table class="table">
         <thead>
             <tr class="thead-dark">
@@ -39,6 +39,7 @@
         {% endif %}
 
         {% for page_number in posts.paginator.page_range %}
+        {% if posts.number|add:-5 <= page_number <= posts.number|add:5 %}
         {% if page_number == posts.number %}
         <li class="page-item active" aria-current="page">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
@@ -47,6 +48,7 @@
         <li class="page-item">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
         </li>
+        {% endif %}
         {% endif %}
         {% endfor %}
 
