@@ -20,7 +20,7 @@ class Post(models.Model):
     category = models.ManyToManyField(Category, help_text='카테고리')
 
     def __str__(self):
-        return self.title
+        return '제목 : %s | 본문 : %s' % (self.title, self.content)
 
     # 1번 글 -> post/1
     def get_absolute_url(self):
