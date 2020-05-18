@@ -12,11 +12,9 @@
     <!-- static 사용을 위한 명령어 -->
     {% load static %}
 
-	<!-- font-awesome -->	
-	<link rel="stylesheet" 
-	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
-	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-	crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- 부트스트랩 사용 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -69,11 +67,11 @@
             <nav id="header-main-menu">
                 <ul class="main-menu sm sm-clean">
                     <li><a href="{% url 'index' %}" class="current">Home</a></li>
-					<li><a href="{% url 'post_list' %}">전체보기</a></li>
-					<li><a href="{% url 'post_video' %}">돌잔치</a></li>
+                    <li><a href="{% url 'post_list' %}">전체보기</a></li>
+                    <li><a href="{% url 'post_video' %}">돌잔치</a></li>
                     <!-- 로그인 한 상태에서는 글 작성하기 보이기 -->
                     {% if user.is_authenticated %}
-					<li><a href="/admin/">관리자 페이지</a></li>
+                    <li><a href="/admin/">관리자 페이지</a></li>
                     <li><a href="{% url 'post_create' %}">글 작성하기</a></li>
                     <li><a href="/accounts/logout">로그아웃</a></li>
                     <!-- 로그인 한 상태가 아니면 로그인 보이기 -->

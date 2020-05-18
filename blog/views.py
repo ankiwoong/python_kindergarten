@@ -6,13 +6,13 @@ from django.core.paginator import Paginator
 
 from blog.models import Category, Post
 
-import logging
+# import logging
 
-logger = logging.getLogger('blog')
+# logger = logging.getLogger('blog')
 
 
 def index(req):
-    logger.info("index : ")
+    # logger.info("index : ")
     post_latest = Post.objects.order_by("-createDate")[:5]      # 내림차순
     context = {
         "post_latest": post_latest
@@ -22,18 +22,18 @@ def index(req):
 
 
 class PostDetailView(generic.DetailView):
-    logger.info("PostDetailView : ")
+    # logger.info("PostDetailView : ")
     model = Post
 
 
 class PostCreate(LoginRequiredMixin, CreateView):
-    logger.info("PostCreate : ")
+    # logger.info("PostCreate : ")
     model = Post
     fields = ['title', 'title_image', 'content', 'category']
 
 
 def post_list(req):
-    logger.info("post_list : ")
+    # logger.info("post_list : ")
     page = int(req.GET.get('page', '1'))
     posts = Post.objects.order_by("-createDate")
 
@@ -48,8 +48,4 @@ def post_list(req):
 
 
 def post_video(req):
-    context = {
-
-    }
-
-    return render(req, 'blog/post_video.html', context=context)
+    return render(req, 'blog/post_video.html')
