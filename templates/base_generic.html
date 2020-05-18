@@ -12,6 +12,12 @@
     <!-- static 사용을 위한 명령어 -->
     {% load static %}
 
+	<!-- font-awesome -->	
+	<link rel="stylesheet" 
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+
     <!-- 부트스트랩 사용 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
@@ -63,11 +69,12 @@
             <nav id="header-main-menu">
                 <ul class="main-menu sm sm-clean">
                     <li><a href="{% url 'index' %}" class="current">Home</a></li>
+					<li><a href="{% url 'post_list' %}">전체보기</a></li>
+					<li><a href="{% url 'post_video' %}">돌잔치</a></li>
                     <!-- 로그인 한 상태에서는 글 작성하기 보이기 -->
                     {% if user.is_authenticated %}
+					<li><a href="/admin/">관리자 페이지</a></li>
                     <li><a href="{% url 'post_create' %}">글 작성하기</a></li>
-                    <li><a href="{% url 'post_list' %}">전체보기</a></li>
-					<li><a href="{% url 'post_video' %}">성장영상</a></li>
                     <li><a href="/accounts/logout">로그아웃</a></li>
                     <!-- 로그인 한 상태가 아니면 로그인 보이기 -->
                     {% else %}
@@ -96,12 +103,8 @@
             </div>
             <div class="social-holder">
                 <div class="social-list">
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-vimeo"></i></a>
-                    <a href="#"><i class="fa fa-behance"></i></a>
-                    <a href="#"><i class="fa fa-rss"></i></a>
+                    <a href="https://developer-ankiwoong.tistory.com/" target="_blank"><i class="fas fa-blog"></i></a>
+                    <a href="https://github.com/ankiwoong/" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="fixed scroll-top">
