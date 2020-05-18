@@ -41,10 +41,11 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False                   # 배포 점검
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = [               # pythonanywhere.com / 배포 주소
+    'anjia.pythonanywhere.com'
+]
 
 # Application definition
 
@@ -141,10 +142,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")      # 배포를 위한 static 파일 처리
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
