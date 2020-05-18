@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %} 
+{% block content %} 
+
+<div class="content container">
+    <header class="page-header">
+        <h1>성장 동영상</h1>
+    </header>
+    <div class="row">
+        <div class="col-md-16" style="float: none; margin: 0 auto;">
+            <div id="player"></div>
+			<video width=800px height=auto controls autoplay>
+			<source src="/media/video.mp4" type="video/mp4"></source>
+			</video>
+        </div>
+    </div>
+</div>
+
+{% load static %} 
+
+{% endblock %}

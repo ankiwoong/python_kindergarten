@@ -67,6 +67,7 @@
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'post_create' %}">글 작성하기</a></li>
                     <li><a href="{% url 'post_list' %}">전체보기</a></li>
+					<li><a href="{% url 'post_video' %}">성장영상</a></li>
                     <li><a href="/accounts/logout">로그아웃</a></li>
                     <!-- 로그인 한 상태가 아니면 로그인 보이기 -->
                     {% else %}
