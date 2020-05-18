@@ -6,11 +6,14 @@ from django.core.paginator import Paginator
 
 from blog.models import Category, Post
 
-# Create your views here.
+import logging
+
+logger = logging.getLogger('blog')
 
 
 def index(req):
-    post_latest = Post.objects.order_by("-createDate")[:]      # 내림차순
+    logger.info("index LOG : ")
+    post_latest = Post.objects.order_by("-createDate")[:5]      # 내림차순
     context = {
         "post_latest": post_latest
     }
@@ -19,15 +22,18 @@ def index(req):
 
 
 class PostDetailView(generic.DetailView):
+    logger.info("PostDetailView LOG : ")
     model = Post
 
 
 class PostCreate(LoginRequiredMixin, CreateView):
+    logger.info("PostCreate LOG : ")
     model = Post
     fields = ['title', 'title_image', 'content', 'category']
 
 
 def post_list(req):
+    logger.info("post_list LOG : ")
     page = int(req.GET.get('page', '1'))
     posts = Post.objects.order_by("-createDate")
 
