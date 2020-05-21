@@ -7,7 +7,7 @@
     <div class="single-post-wrapper content-1070 center-relative">
 
         <article class="center-relative">
-            <h2>새 글 작성하기</h2>
+            <h1>{% block title %}새 글 작성하기{% endblock %}</h1>
             {% load widget_tweaks %}
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
