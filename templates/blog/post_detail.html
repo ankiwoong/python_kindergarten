@@ -31,22 +31,31 @@
                             </a></li>
                     </ul>
                 </div>
-                <!-- 글 작성일 -->
-                <div class="entry-date published">{{ post.createDate }}</div>
+				<p>
+				<!-- 글 작성일 -->
+                <div class="entry-date published">작성일시 : {{ post.createDate }}</div>
+				</p>
+				<p>
+				<!-- 글 수정일 -->
+				<div class="entry-date published">수정일시 : {{ post.updateDate }}</div>
+				</p>
                 <div class="clear"></div>
             </div>
 
             <!-- 사진 -->
             {% if post.title_image %}
-            <div class="post-full-width">
+            <div class="post-full-width">				
                 <img src="{{ post.title_image.url }}" alt="">
             </div>
             {% endif %}
 
-            <div class=" entry-content">
-                <div class="content-wrap content-660 center-relative">
+            <div class="content-wrap content-660 center-relative">
+                <div class="wrap-blockquot">
+				<!-- 인용문 -->
+				<blockquote class="inline-blockquote" style="text-align:center">
+					<p>Letter to my beloved daughter AnjiA</p>
+                </blockquote>
                     {{ post.content }}
-                    <div class="clear"></div>
                 </div>
             </div>
             <div class="clear"></div>
