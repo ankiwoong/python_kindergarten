@@ -44,7 +44,8 @@ SECRET_KEY = get_secret("SECRET_KEY")
 DEBUG = True                   # 배포 시 False / 개발 시 True
 
 ALLOWED_HOSTS = [               # pythonanywhere.com / 배포 주소
-    'anjia.pythonanywhere.com'
+    'anjia.pythonanywhere.com',
+    '*',
 ]
 
 # Application definition
