@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Category, Post
+from blog.models import Category, Post, AuditEntry
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -17,5 +17,11 @@ class PostAdmin(admin.ModelAdmin):
     ]
 
 
+class AuditEntryAdmin(admin.ModelAdmin):
+    list_display = ('action', 'username', 'ip')
+    list_filter = ('action', )        # 필터링 작업
+
+
 admin.site.register(Category)
 admin.site.register(Post, PostAdmin)
+admin.site.register(AuditEntry, AuditEntryAdmin)
