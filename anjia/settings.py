@@ -43,9 +43,10 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True                   # 배포 시 False / 개발 시 True
 
-ALLOWED_HOSTS = [               # pythonanywhere.com / 배포 주소
-    'anjia.pythonanywhere.com',
-    '*',
+ALLOWED_HOSTS = [
+    'anjia.pythonanywhere.com',     # pythonanywhere.com / 배포 주소
+    '127.0.0.1',                    # 로컬 서버
+    '[::1]',                        # 로컬 서버
 ]
 
 # Application definition
