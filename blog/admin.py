@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
     fieldsets = [
         ('기본 정보', {'fields': (('title', 'content',))}),
         ('카테고리', {'fields': ['category']}),
-        ('날짜', {'fields': ['createDate']}),
+        # ('날짜', {'fields': ['createDate']}),
     ]
 
 
