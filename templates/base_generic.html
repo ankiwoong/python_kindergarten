@@ -2,7 +2,7 @@
 <html lang="ko">
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}안지아 성장 블로그{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="Template by Colorlib" />
     <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
@@ -58,14 +58,15 @@
                 </label>
             </div>
             <div class="site-info-holder">
-                <h1 class="site-title">Suppablog</h1>
+                <h1 class="site-title">안지아 성장 블로그</h1>
                 <p class="site-description">
-                    Suppablog is simple and yet cool wordpress theme to lorem ipsum
-                    dolor sit.
+                    Language : Python - Django<br>
+                    Coder : AnKiWoong<br>
                 </p>
             </div>
             <nav id="header-main-menu">
                 <ul class="main-menu sm sm-clean">
+                    <!-- 로그인 / 로그아웃 공통으로 보이는 메뉴 -->
                     <li><a href="{% url 'index' %}" class="current">Home</a></li>
                     <li><a href="{% url 'post_list' %}">전체보기</a></li>
                     <li><a href="{% url 'post_video' %}">돌잔치</a></li>
@@ -81,6 +82,7 @@
                 </ul>
             </nav>
             <footer>
+                <!-- bootstrap maker -->
                 <div class="footer-info">
                     © 2018 SUPPABLOG HTML TEMPLATE. <br />
                     CRAFTED WITH <i class="fa fa-heart"></i> BY
@@ -99,9 +101,12 @@
                     <div class="menu-line"></div>
                 </div>
             </div>
+            <!-- Social Bar -->
             <div class="social-holder">
                 <div class="social-list">
+                    <!-- 블로그 -->
                     <a href="https://developer-ankiwoong.tistory.com/" target="_blank"><i class="fas fa-blog"></i></a>
+                    <!-- 깃허브 -->
                     <a href="https://github.com/ankiwoong/" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
