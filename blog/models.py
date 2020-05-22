@@ -1,7 +1,5 @@
-# pip install django-model-utils
 from django.dispatch import receiver
 from django.contrib.auth.signals import user_logged_in, user_logged_out, user_login_failed
-from model_utils.models import TimeStampedModel
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
