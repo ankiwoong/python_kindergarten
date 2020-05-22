@@ -6,33 +6,32 @@
     <h1>Admin Login Page</h1>
 
     {% if form.errors %}
-    <p>이름과 비밀번호가 일치하지 않습니다. 다시 시도해주세요.</p>
+    <p>관리자 계정을 정확하게 입력 하세요.</p>
     {% endif %}
-    <div class="co">
-        <form class="login_form" method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <table>
-                <th>관리자 아이디</th>
-                <tr></tr>
-                <tr>
-                    <td>{{ form.username }}</td>
-                </tr>
-                <th>관리자 패스워드</th>
-                <tr></tr>
-                <tr>
-                    <td>{{ form.password }}</td>
-                </tr>
-            </table>
-            <br>
-            <div class="form-row text-center">
-                <div class="col-12">
-                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="login" />
-                    <input type="hidden" name="next" value="{{ next }}" />
+
+    <div class="container my-3">
+        <div class="row justify-content-center align-self-center">
+            <form class="login_form" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">관리자 ID</label>
+                    <input type="text" class="form-control" name="username" id="username"
+                        value="{{ form.username.value|default_if_none:'' }}">
                 </div>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="password">관리자 PW</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                        value="{{ form.password.value|default_if_none:'' }}">
+                </div>
+                <div class="form-row text-center">
+                    <div class="col-12">
+                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="로그인" />
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 </div>
 
 {% endblock %}
