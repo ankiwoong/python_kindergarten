@@ -20,6 +20,7 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from django.conf.urls import handler400, handler500
 
 
 # http://localhost:8000/ => http://localhost:8000/blog
@@ -36,3 +37,6 @@ urlpatterns += static(settings.STATIC_URL,
                       document_root=settings.STATIC_ROOT)     # staic 정적 파일 처리
 urlpatterns += static(settings.MEDIA_URL,
                       document_root=settings.MEDIA_ROOT)     # media 정적 파일 처리
+
+handler404 = 'blog.views.error404'
+handler500 = 'blog.views.error500'
