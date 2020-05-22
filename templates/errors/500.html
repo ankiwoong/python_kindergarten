@@ -1,0 +1,21 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+{% block title %} Internal Server Error 500 {% endblock %}
+<div class="container" style="margin-top:20px;">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Forbidden - Error 500
+                </div>
+                <div class="card-block">
+                    <p class="lead">
+                        The server has encountered a situation it doesn't know how to handle.
+                    </p>
+                    <a href="/" class="btn btn-link">Return HOME</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
