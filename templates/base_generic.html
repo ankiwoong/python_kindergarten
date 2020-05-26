@@ -4,21 +4,21 @@
 <head>
     <title>{% block title %}안지아 성장 블로그{% endblock %}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	
-	<!-- SEO -->
+
+    <!-- SEO -->
     <meta name="description" content="The growth blog of my beloved daughter" />
     <meta name="keywords" content="HTML, CSS, JavaScript, Python, Djaong" />
     <meta name="author" content="AnKiWoong" />
-	
-	<!-- 모바일 브라우저에서 웹컨텐트를 출력하는 영역 -->
+
+    <!-- 모바일 브라우저에서 웹컨텐트를 출력하는 영역 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- static 사용을 위한 명령어 -->
     {% load static %}
 
-	<!-- 구글 웹폰트 적용 -->
-	<!-- Noto Serif KR -->
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <!-- 구글 웹폰트 적용 -->
+    <!-- Noto Serif KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
 
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -59,12 +59,15 @@
     <!-- Left Sidebar -->
     <div id="sidebar" class="sidebar">
         <div class="menu-left-part">
-            <div class="search-holder">
-                <label>
-                    <input type="search" class="search-field" placeholder="Type here to search..." value="" name="s"
-                        title="Search for:" />
-                </label>
+            {% if user.is_authenticated %}
+            <div style="text-align: center; color: wheat; font-size: 40px; margin-top: 20px;">
+                <i class="far fa-id-badge"> {{user.get_username}} </i>
             </div>
+            {% else %}
+            <div style="text-align: center; color: white; font-size: 40px; margin-top: 20px;">
+                <i class="far fa-id-badge"></i>
+            </div>
+            {% endif %}
             <div class="site-info-holder">
                 <h1 class="site-title">안지아 성장 블로그</h1>
                 <p class="site-description">

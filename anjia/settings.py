@@ -63,6 +63,8 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     'blog.apps.BlogConfig',
     'widget_tweaks',
+    'disqus',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -194,3 +196,6 @@ LOGGING = {
         },
     }
 }
+
+DISQUS_WEBSITE_SHORTNAME = 'ankiwoong'
+SITE_ID = 1
