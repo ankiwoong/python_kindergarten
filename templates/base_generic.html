@@ -81,6 +81,7 @@
                     <li><a href="{% url 'index' %}" class="current">Home</a></li>
                     <li><a href="{% url 'post_list' %}">전체보기</a></li>
                     <li><a href="{% url 'post_video' %}">돌잔치</a></li>
+                    <li><a href="{% url 'post_photo' %}">사진전체보기</a></li>
                     <!-- 로그인 한 상태에서는 글 작성하기 보이기 -->
                     {% if user.is_authenticated %}
                     <li><a href="/admin/">관리자 페이지</a></li>

@@ -51,6 +51,10 @@ def post_video(req):
     return render(req, 'blog/post_video.html')
 
 
+def post_photo(req):
+    return render(req, 'blog/post_photo.html')
+
+
 def error400(req, exception):
     return render(req, "errors/400.html", status=400)
 
@@ -65,17 +69,3 @@ def error404(req, exception):
 
 def error500(req):
     return render(req, "errors/500.html", status=500)
-
-
-def post_list(request):
-    qs = Post.objects.all()
-
-    # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
-    q = request.GET.get('q', '')
-    if q:  # q가 있으면
-        qs = qs.filter(title__icontains=q)  # 제목에 q가 포함되어 있는 레코드만 필터링
-
-    return render(request, 'blog/post_list.html', {
-        'post_list': qs,
-        'q': q,
-    })
